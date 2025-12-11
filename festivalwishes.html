@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merry Christmas 2025</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>🎄</text></svg>">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Background image layer */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: url('https://png.pngtree.com/thumb_back/fw800/background/20241102/pngtree-a-santa-claus-riding-sleigh-with-reindeers-s-reindeer-journey-image_16493324.jpg') center/cover no-repeat;
+        opacity: 0.35;
+        z-index: -2;
+        pointer-events: none;
+    }
+
+    body {
+        background: #0a1b3d;
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        padding: 20px 15px;
+    }
+
+    /* SNOW */
+    .snow-container {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        pointer-events: none;
+        z-index: 1;
+    }
+    .snow {
+        position: absolute;
+        color: #e0f5ff;
+        font-size: clamp(16px, 4vw, 34px);
+        animation: fall linear infinite;
+        opacity: 0.9;
+        text-shadow: 0 0 0 12px rgba(150,220,255,0.8);
+    }
+    @keyframes fall {
+        0% { transform: translateY(-10vh); }
+        100% { transform: translateY(110vh); }
+    }
+
+    /* POPUP */
+    .name-popup {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,10,40,0.98);
+        backdrop-filter: blur(15px);
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .popup-box {
+        background: rgba(255,255,255,0.18);
+        backdrop-filter: blur(25px);
+        border: 3px solid rgba(255,255,255,0.4);
+        border-radius: 40px;
+        padding: 50px 40px;
+        max-width: 90%;
+        text-align: center;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+    }
+    .popup-box h2 {
+        font-family: 'Mountains of Christmas', cursive;
+        font-size: clamp(3rem, 10vw, 5.5rem);
+        background: linear-gradient(45deg, #ff1744, #ffd700, #00e676);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+    }
+    .popup-box p {
+        font-size: 1.9rem;
+        margin: 25px 0;
+        color: #ffdd99;
+    }
+    #goofyInput {
+        width: 100%;
+        padding: 22px 30px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.8rem;
+        text-align: center;
+        background: rgba(255,255,255,0.25);
+        color: white;
+        margin: 20px 0;
+    }
+    #goofyInput::placeholder {
+        color: rgba(255,255,255,0.7);
+        font-style: italic;
+    }
+    #goofyBtn {
+        background: linear-gradient(45deg, #ff1744, #ffd700);
+        color: white;
+        border: none;
+        padding: 20px 80px;
+        border-radius: 50px;
+        font-size: 2rem;
+        cursor: pointer;
+        box-shadow: 0 15px 40px rgba(255,23,68,0.5);
+        transition: 0.3s;
+    }
+    #goofyBtn:hover { transform: scale(1.1) rotate(2deg); }
+
+    /* MAIN AREA */
+    .main {
+        z-index: 10;
+        text-align: center;
+        max-width: 800px;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 1.5s ease-out;
+    }
+    .main.show { opacity: 1; }
+
+    .title {
+        font-family: 'Mountains of Christmas', cursive;
+        font-size: clamp(3rem, 9vw, 6rem);
+        background: linear-gradient(45deg, #ff1744, #ffd700, #00e676);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+    }
+
+    .name-line {
+        font-size: clamp(2.4rem, 7vw, 4.8rem);
+        font-weight: 900;
+        text-shadow: 0 0 40px #ff1744, 0 0 80px #ff1744;
+        margin: 20px 0 40px;
+        white-space: nowrap;
+        line-height: 1.2;
+    }
+    .name-line .name {
+        color: white;
+        text-shadow: 0 0 30px #ff1744, 0 0 80px #ff1744;
+        animation: glow 3s infinite alternate;
+        display: inline;
+    }
+    @keyframes glow {
+        from { filter: brightness(1); }
+        to { filter: brightness(1.45); }
+    }
+
+    .blessing {
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255,255,255,0.3);
+        border-radius: 30px;
+        padding: 35px 25px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+        line-height: 1.5;
+        margin: 30px 0;
+    }
+
+    .sender {
+        font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+        color: #ffd700;
+        font-weight: 700;
+        text-shadow: 0 0 20px #ffd700;
+        margin: 40px 0 80px;
+    }
+
+    /* BUTTONS */
+    .buttons-container {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 18px;
+        z-index: 999;
+    }
+    .share {
+        width: 45vw;
+        max-width: 200px;
+        height: 65px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        transition: 0.3s;
+        position: relative;
+    }
+    .share:hover { transform: scale(1.08); }
+    .wa { background: #25D366; }
+    .copy { background: #8b5cf6; }
+
+    .copied-msg {
+        position: absolute;
+        top: -45px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.8);
+        color: #0f0;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 1.1rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s;
+        white-space: nowrap;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="snow-container" id="snow"></div>
+
+<div class="name-popup" id="namePopup">
+    <div class="popup-box">
+        <h2>Ho Ho Ho!</h2>
+        <p>What's your name?</p>
+        <input id="goofyInput" type="text" placeholder="Type a name... (or be naughty)">
+        <button id="goofyBtn">Send Magic!</button>
+    </div>
+</div>
+
+<div class="main" id="main">
+    <div class="title">Merry Christmas 2025</div>
+
+    <div class="name-line">
+        To <span class="name" id="userName">FRIEND</span>!
+    </div>
+
+    <div class="blessing">
+        Me <strong id="senderName">Someone</strong> wish may your Christmas be wrapped in love, lit by joy, and warmed by the people who mean the world to you.<br>
+        You are so loved — today and always. Merry Christmas with all my heart!
+    </div>
+
+    <div class="sender">send your friends wish with your name on it</div>
+</div>
+
+<div class="buttons-container">
+    <a id="waBtn" class="share wa" href="#">WhatsApp</a>
+    <a id="copyBtn" class="share copy" href="#">
+        Copy Link
+        <span class="copied-msg">Copied!</span>
+    </a>
+</div>
+
+<script>
+    // Snow generator
+    const container = document.querySelector('.snow-container');
+    for (let i = 0; i < 280; i++) {
+        const snow = document.createElement('div');
+        snow.classList.add('snow');
+        snow.textContent = '❄️';
+        snow.style.left = Math.random() * 100 + 'vw';
+        snow.style.animationDuration = 8 + Math.random() * 14 + 's';
+        snow.style.animationDelay = Math.random() * 10 + 's';
+        snow.style.top = `-${Math.random() * 100}vh`;
+        container.appendChild(snow);
+    }
+
+    // Sender name from URL
+    const params = new URLSearchParams(window.location.search);
+    let senderName = decodeURIComponent(params.get('from') || "Santa Himself");
+    document.getElementById("senderName").textContent = senderName;
+
+    // HIDE THE QUERY FROM URL IMMEDIATELY
+    history.replaceState({}, document.title, window.location.pathname);
+
+    let currentUserName = "Friend";
+
+    // Popup handler
+    document.getElementById("goofyBtn").onclick = () => {
+        const name = document.getElementById("goofyInput").value.trim() || "Naughty Kid";
+
+        currentUserName = name;
+        document.getElementById("userName").textContent = name.toUpperCase();
+
+        const baseURL = location.href.split('?')[0];
+        const shareURL = `${baseURL}?from=${encodeURIComponent(name)}`;
+
+        // Update WhatsApp button
+        document.getElementById("waBtn").href =
+            "https://api.whatsapp.com/send?text=" + encodeURIComponent(
+                `Merry Christmas 2025 dear ${name}!\n\n${name} sent you this magical wish!\n\n${shareURL}`
+            );
+
+        // Update Copy button
+        document.getElementById("copyBtn").onclick = (e) => {
+            e.preventDefault();
+            navigator.clipboard.writeText(shareURL).then(() => {
+                const msg = document.querySelector(".copied-msg");
+                msg.style.opacity = "1";
+                setTimeout(() => msg.style.opacity = "0", 2000);
+            });
+        };
+
+        // Hide popup
+        document.getElementById("namePopup").style.opacity = "0";
+        setTimeout(() => {
+            document.getElementById("namePopup").remove();
+            document.getElementById("main").classList.add("show");
+        }, 600);
+    };
+
+    // Allow Enter key
+    document.getElementById("goofyInput").addEventListener("keypress", e => {
+        if (e.key === "Enter") document.getElementById("goofyBtn").click();
+    });
+</script>
+
+</body>
+</html>
